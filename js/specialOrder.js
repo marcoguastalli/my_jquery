@@ -15,10 +15,15 @@ var specialOrder = function () {
 
         var articleObject = new Object();
         articleObject.field1 = inputTextVal;
+        var outputAsJson = JSON.stringify(articleObject);
+        //$('#output').val(outputAsJson);
 
-        var output = JSON.stringify(articleObject);
 
-        $('#output').val(output);
+	    $($article).find("input").each(function() {
+	        var inputVal = $(this).val();
+	        $('#output').val(inputVal);
+	    });
+
     });
 
 };
