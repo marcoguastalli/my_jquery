@@ -8,11 +8,17 @@ var specialOrder = function () {
     $('div').click(function () {
     	var $article = $(this).closest(data(attr_article_container));
         //alert($article);
+        //$('#output').val($article);
 
         var inputTextVal = $('#field1').val();
         //alert(inputTextVal);
 
-        $('#output').val($article);
+        var articleObject = new Object();
+        articleObject.field1 = inputTextVal;
+
+        var output = JSON.stringify(articleObject);
+
+        $('#output').val(output);
     });
 
 };
